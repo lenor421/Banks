@@ -34,6 +34,5 @@ $num_rows = mysqli_num_rows($result);
 print("<P>Всего банков: $num_rows </p>");
 ?>
 <p> <a href="lab4-1.php"> Добавить банк </a>
-		<p><a href="index.php">назад </a></p>
 	</body>
 </html>
