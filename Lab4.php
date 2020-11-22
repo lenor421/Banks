@@ -34,5 +34,27 @@ $num_rows = mysqli_num_rows($result);
 print("<P>Всего банков: $num_rows </p>");
 ?>
 <p> <a href="lab4-1.php"> Добавить банк </a>
+<h2>Программы депозитов:</h2>
+<table border="1">
+<tr> 
+ <th> Название </th> 
+ <th> % годовых </th> 
+ <th> id банка </th> </tr>
+<?php
+$result=mysqli_query ($connect, "SELECT id, Name, Proz, id_bank, Naz_banka FROM depositprograms");
+while ($row=mysqli_fetch_array($result)){
+ echo "<tr>";
+ echo "<td>" . $row['Name'] . "</td>";
+ echo "<td>" . $row['Proz'] . "</td>";
+ echo "<td>" . $row['Naz_banka'] . "</td>";
+ echo "<td><a href='lab4-3.php?id=" . $row['id']
+. "'>Редактировать</a></td>"; 
+ echo "<td><a href='lab4-5.php?id=" . $row['id']
+. "'>Удалить</a></td>"; 
+echo "</tr>";}print "</table>";
+$num_rows = mysqli_num_rows($result); 
+print("<P>Всего программ: $num_rows </p>");
+?>
+<p> <a href="lab4-1.php"> Добавить программу </a>
 	</body>
 </html>
