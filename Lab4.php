@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<h1> Лабораторная работа №4</h1>
+		<h1> Лабораторная работа №4-5</h1>
 		<h3>Шаяхметов Р.Д.</h3>
 		<h3>Вариант 3</h3>
 <?php
@@ -39,7 +39,7 @@ print("<P>Всего банков: $num_rows </p>");
 <tr> 
  <th> Название </th> 
  <th> % годовых </th> 
- <th> id банка </th> </tr>
+ <th> Наименование банка </th> </tr>
 <?php
 $result=mysqli_query ($connect, "SELECT id, Name, Proz, id_bank, Naz_banka FROM depositprograms");
 while ($row=mysqli_fetch_array($result)){
@@ -52,9 +52,9 @@ while ($row=mysqli_fetch_array($result)){
  echo "<td><a href='lab4-5.php?id=" . $row['id']
 . "'>Удалить</a></td>"; 
 echo "</tr>";}print "</table>";
-$num_rows = mysqli_num_rows($result); 
-print("<P>Всего программ: $num_rows </p>");
+$num_rows1 = mysqli_num_rows($result); 
+print("<P>Всего программ: $num_rows1 </p>");
 ?>
-<p> <a href="lab4-1.php"> Добавить программу </a>
+<p> <a href="lab5-1.php"> Добавить программу </a>
 	</body>
 </html>
